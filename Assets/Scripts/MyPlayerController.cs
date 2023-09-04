@@ -8,7 +8,7 @@ public class MyPlayerController : MonoBehaviour
     private InputActionReference movementControl;
     [SerializeField]
     private InputActionReference jumpControl;
-    
+
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -48,7 +48,7 @@ public class MyPlayerController : MonoBehaviour
         {
             playerVelocity.y = 0f;
         }
-
+        
         Vector2 movement = movementControl.action.ReadValue<Vector2>();
         //Debug.Log("Movement Input: " + movement);
 

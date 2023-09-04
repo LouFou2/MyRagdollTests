@@ -29,6 +29,8 @@ public class SurveyorWheel : MonoBehaviour
     private float initialArmTarget_R_Y;
     private float pelvisTargetY;
     private float initialPelvisTargetY;
+    private float initialWheelRadius;
+    private float scalePelvisTargetY;
     private bool withinThreshold = false; //this threshold is used for switching y movement of ste between grounded and lifting
     private bool stepDown = false;
     private Vector3 lastPosition;
@@ -47,7 +49,7 @@ public class SurveyorWheel : MonoBehaviour
         wheelPosition = transform.position;
         wheelPosition.y = wheelRadius;
         transform.position = wheelPosition;
-
+        initialWheelRadius = wheelRadius; // also gonna need this to aadjust pelvis y position
 
         lastPosition = stepController.transform.position; // Use Global Position of parent controller
         initialPelvisTargetY = pelvisTarget.localPosition.y; // Initialize the pelvis target's Y position (need it for offset)
@@ -74,13 +76,10 @@ public class SurveyorWheel : MonoBehaviour
         wheelPosition = transform.position;
         wheelPosition.y = wheelRadius;
         transform.position = wheelPosition;
-
+        
         //-- The Rotation of the Surveyor Wheel --// (the idea of a surveyor wheel is: if wheel radius is 1 unit & wheel moves 1 unit, arc length = 1 unit, radians = 1 unit)
         // Radian Value = Arc Length / Radius
         float rotationAngle = (x_z_MovementAmount / wheelRadius) * Mathf.Rad2Deg;
-        
-        Debug.Log("Movement Amount: " + x_z_MovementAmount + ", Rads Rotation Angle: " + (x_z_MovementAmount / wheelRadius));
-         
         transform.Rotate(rotationAngle, 0f, 0f, Space.Self);
 
         //-- The Movement of the Targets --//
@@ -102,8 +101,9 @@ public class SurveyorWheel : MonoBehaviour
         armTargetY_R = Mathf.Cos(wheelLocalRotationX) * wheelRadius;
 
         // Calculate the Pelvis Target's Y position using a cosine function
-        pelvisTargetY = transform.localPosition.y - Mathf.Cos(wheelLocalRotationX * 2) * wheelRadius; // Subtracting Cosine value, because movement on y is down
-        
+        pelvisTargetY = -(Mathf.Cos(wheelLocalRotationX * 2) * wheelRadius * pelvisBounceFactor);
+        /*pelvisTargetY = transform.localPosition.y - Mathf.Cos(wheelLocalRotationX * 2) * wheelRadius;*/ // Subtracting Cosine value, because movement on y is down
+
         // Calculate the y position of the stepTarget point as the wheel turns
         // The L and the R should switch, when R is stepDown, the L moves up, and vice versa (see toggle logic below)
         // ( when the steptarget reaches each opposite end of the f-b / z movement, switch between lifting/grounded )
@@ -166,7 +166,8 @@ public class SurveyorWheel : MonoBehaviour
 
         // Set the Y position of the pelvis target
         Vector3 pelvisTargetPosition = pelvisTarget.localPosition;
-        pelvisTargetPosition.y = initialPelvisTargetY - pelvisTargetY * pelvisBounceFactor; // pay attention to addition vs subtraction for values
+        float pelvisTargetScale = wheelRadius - initialWheelRadius;
+        pelvisTargetPosition.y = initialPelvisTargetY + pelvisTargetScale - pelvisTargetY;// * pelvisBounceFactor; // pay attention to addition vs subtraction for values
         pelvisTarget.localPosition = pelvisTargetPosition;
 
         // Set the armTargets z AND y positions

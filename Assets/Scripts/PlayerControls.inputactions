@@ -102,6 +102,17 @@
                 },
                 {
                     "name": "",
+                    "id": "bfc8051e-1023-40a7-89da-a3b1f5ce12f3",
+                    "path": "<SwitchProControllerHID>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ed146fc7-c823-481b-9990-c09b9891ff83",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -115,6 +126,17 @@
                     "name": "",
                     "id": "9c726014-ba34-4d6e-9c87-700535b72f43",
                     "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c26bc433-d9bb-4c4a-975a-1cbdcd8a0c8e",
+                    "path": "<SwitchProControllerHID>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -143,14 +165,52 @@
                     "action": "MouseLook",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4773fd6a-f7fa-44ea-bb08-3e8a1a875fea",
+                    "path": "<SwitchProControllerHID>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseLook",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
     ],
     "controlSchemes": [
         {
-            "name": "New control scheme",
-            "bindingGroup": "New control scheme",
+            "name": "SwitchPro",
+            "bindingGroup": "SwitchPro",
+            "devices": [
+                {
+                    "devicePath": "<SwitchProControllerHID>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Gyro",
+            "bindingGroup": "Gyro",
+            "devices": [
+                {
+                    "devicePath": "<Gyroscope>",
+                    "isOptional": true,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<SwitchProControllerHID>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "KeyBoardMouseXbox",
+            "bindingGroup": "KeyBoardMouseXbox",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
@@ -160,6 +220,11 @@
                 {
                     "devicePath": "<Mouse>",
                     "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<XInputController>",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]
