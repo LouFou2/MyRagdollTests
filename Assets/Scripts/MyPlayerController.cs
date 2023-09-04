@@ -50,7 +50,7 @@ public class MyPlayerController : MonoBehaviour
         }
 
         Vector2 movement = movementControl.action.ReadValue<Vector2>();
-        Debug.Log("Movement Input: " + movement);
+        //Debug.Log("Movement Input: " + movement);
 
         Vector3 move = new Vector3(movement.x, 0, movement.y);
         
