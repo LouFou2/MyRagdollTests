@@ -53,6 +53,7 @@ public class SurveyorWheel : MonoBehaviour
 
         lastPosition = stepController.transform.position; // Use Global Position of parent controller
         initialPelvisTargetY = pelvisTarget.localPosition.y; // Initialize the pelvis target's Y position (need it for offset)
+        pelvisTargetY = initialPelvisTargetY;
         // *** COULD ALSO INITIALIZE THE Y POSITION of the leg IK targets (if the targets need to be off the ground/ different from parent transform y position
         initialArmTarget_L_Y = armTarget_L.localPosition.y;
         initialArmTarget_R_Y = armTarget_L.localPosition.y; // Initialize the arm targets Y positions, need it for offset
@@ -83,30 +84,38 @@ public class SurveyorWheel : MonoBehaviour
         transform.Rotate(rotationAngle, 0f, 0f, Space.Self);
 
         //-- The Movement of the Targets --//
-        // Calculate the z position of the stepTarget point on the wheel's circumference. Sine Wave function
-
-        float wheelLocalRotationX = transform.localRotation.eulerAngles.x * Mathf.Deg2Rad;
-
-        float stepTargetZ_L = Mathf.Sin(wheelLocalRotationX) * wheelRadius; // Adding the Sine value
-        // *** BREAK DOWN THE "FREQUENCY", "AMPLITUDE" AND "OFFSET" VALUES FOR THE SINE WAVE.
+        // *** BREAK DOWN THE "FREQUENCY", "AMPLITUDE" AND "OFFSET" VALUES FOR THE SINE/COSINE WAVES.
         //      frequency: should it be double-time, etc.
         //      amplitude: e.g. wheelRadius * stepWidthFactor
         //      offset: the initial position of the object (* any desired phasing factor, if needed)
+
+        float wheelLocalRotationX = transform.localRotation.eulerAngles.x * Mathf.Deg2Rad;
+        Debug.Log("X rotation of wheel: " + transform.localRotation.eulerAngles.x);
+
+        // LEG IK
+        float stepTargetZ_L = Mathf.Sin(wheelLocalRotationX) * wheelRadius; // Adding the Sine value
+        
         float stepTargetZ_R = -stepTargetZ_L;
 
-        // The Arm IK targets. *** SINE OR COSINE? CHECK.
+        // ARM IK targets. *** SINE OR COSINE? CHECK.
         float armTargetZ_R = Mathf.Sin(wheelLocalRotationX) * wheelRadius;
         float armTargetZ_L = -armTargetZ_R; // * note: arms R and L Z movement is opposite from legs
         armTargetY_L =  Mathf.Cos(wheelLocalRotationX) * wheelRadius;
         armTargetY_R = Mathf.Cos(wheelLocalRotationX) * wheelRadius;
 
-        // Calculate the Pelvis Target's Y position using a cosine function
-        pelvisTargetY = -(Mathf.Cos(wheelLocalRotationX * 2) * wheelRadius * pelvisBounceFactor);
-        /*pelvisTargetY = transform.localPosition.y - Mathf.Cos(wheelLocalRotationX * 2) * wheelRadius;*/ // Subtracting Cosine value, because movement on y is down
+        // PELVIS Target's Y position using a cosine function
+        
+        float pelvisTargetY_Amplitude = (wheelRadius / 2) * pelvisBounceFactor;
+        float pelvisFloorMin = 0.3f;    //*** THESE SHOULD BE SMARTER CALCULATIONS
+        float pelvisCeilMax = 2f;       // ELSE CLAMPED AMPLITUDE WILL SIMPLY = AMPLITUDE
+        float pelvis_Y_ClampedAmplitude = Mathf.Clamp(pelvisTargetY_Amplitude, pelvisFloorMin, pelvisCeilMax);
+        float pelvisTargetY_Offset = pelvis_Y_ClampedAmplitude;
+        Debug.Log(pelvisTargetY_Offset);
+        pelvisTargetY = (Mathf.Cos(wheelLocalRotationX * 2) * pelvisTargetY_Amplitude);// - pelvisTargetY_Amplitude;//
+
 
         // Calculate the y position of the stepTarget point as the wheel turns
         // The L and the R should switch, when R is stepDown, the L moves up, and vice versa (see toggle logic below)
-        // ( when the steptarget reaches each opposite end of the f-b / z movement, switch between lifting/grounded )
         if (!stepDown)
         {
             stepTargetY_L = transform.localPosition.y + Mathf.Cos(wheelLocalRotationX * 2) * wheelRadius;
@@ -120,6 +129,7 @@ public class SurveyorWheel : MonoBehaviour
         }
 
         // Setup needed vars for 'stepDown toggle'
+        // When the steptarget reaches each opposite end of the f-b / z movement, switch between lifting/grounded
         float adjustedWheelRadius = wheelRadius * stepWidthFactor; //adjust the max/min range based on the actual step width
         float threshold = adjustedWheelRadius * 0.98f; // set up a threshold, because sine/cosine values don't reach max/min predicatably
         Vector2 horizontalVector2 = new Vector2(lastStepPosition_L.x, lastStepPosition_L.z); //only measure horizontal x/z movement
@@ -137,7 +147,7 @@ public class SurveyorWheel : MonoBehaviour
             withinThreshold = false;
         }
 
-        // Set the stepTarget's z position
+        // Set the stepTarget's position
         Vector3 stepTargetPosition_L = stepTarget_L.localPosition;
         Vector3 stepTargetPosition_R = stepTarget_R.localPosition;
 
@@ -166,8 +176,8 @@ public class SurveyorWheel : MonoBehaviour
 
         // Set the Y position of the pelvis target
         Vector3 pelvisTargetPosition = pelvisTarget.localPosition;
-        float pelvisTargetScale = wheelRadius - initialWheelRadius;
-        pelvisTargetPosition.y = initialPelvisTargetY + pelvisTargetScale - pelvisTargetY;// * pelvisBounceFactor; // pay attention to addition vs subtraction for values
+        float pelvisTargetFinalOffset = 0f;
+        pelvisTargetPosition.y = initialPelvisTargetY + pelvisTargetY + pelvisTargetFinalOffset;
         pelvisTarget.localPosition = pelvisTargetPosition;
 
         // Set the armTargets z AND y positions
