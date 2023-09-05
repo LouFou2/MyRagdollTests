@@ -3746,7 +3746,7 @@ MonoBehaviour:
   stepController: {fileID: 1371400054}
   wheelRadius: 0.6627517
   stepLiftFactor: 0.13
-  stepWidthFactor: 1
+  stepWidthFactor: 0.3
   stepTarget_L: {fileID: 2067190979}
   stepTarget_R: {fileID: 1121864189}
   pelvisTarget: {fileID: 1681107834}
@@ -4109,7 +4109,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750773616}
-  m_LocalRotation: {x: -0.0021185316, y: -0.0000000022212028, z: -4.705699e-12, w: 0.9999978}
+  m_LocalRotation: {x: -0.0021185302, y: -7.246698e-10, z: -1.5352394e-12, w: 0.9999978}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
