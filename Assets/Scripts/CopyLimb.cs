@@ -101,7 +101,7 @@ public class CopyLimb : MonoBehaviour
 
     private Vector3 copyPosition()
     {
-        Vector3 positionDifference = this.targetLimb.localPosition - this.targetInitialPosition;
+        Vector3 positionDifference = this.targetInitialPosition -this.targetLimb.localPosition;
         return positionDifference * positionCopyAmount;
     }
     private JointDrive ScaleDrive(JointDrive originalDrive, float ragdollPowerFactor)
