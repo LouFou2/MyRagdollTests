@@ -583,25 +583,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -710,8 +710,8 @@ Rigidbody:
   m_GameObject: {fileID: 923313573}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1257,8 +1257,8 @@ Rigidbody:
   m_GameObject: {fileID: 923313574}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1460,8 +1460,8 @@ Rigidbody:
   m_GameObject: {fileID: 923313575}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1839,8 +1839,8 @@ Rigidbody:
   m_GameObject: {fileID: 923313577}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1897,25 +1897,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -2028,25 +2028,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -2123,8 +2123,8 @@ Rigidbody:
   m_GameObject: {fileID: 923313580}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2181,25 +2181,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -2257,8 +2257,8 @@ Rigidbody:
   m_GameObject: {fileID: 923313581}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2315,25 +2315,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -2480,8 +2480,8 @@ Rigidbody:
   m_GameObject: {fileID: 1038759548}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2516,25 +2516,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -2624,8 +2624,8 @@ Rigidbody:
   m_GameObject: {fileID: 1044947779}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2660,25 +2660,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -2817,8 +2817,8 @@ Rigidbody:
   m_GameObject: {fileID: 923313576}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2875,25 +2875,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -2956,8 +2956,8 @@ Rigidbody:
   m_GameObject: {fileID: 923313582}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -3027,25 +3027,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -3143,25 +3143,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -3233,8 +3233,8 @@ Rigidbody:
   m_GameObject: {fileID: 1288898693}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -3456,8 +3456,8 @@ Rigidbody:
   m_GameObject: {fileID: 1536650687}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -3492,25 +3492,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -3615,25 +3615,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -3705,8 +3705,8 @@ Rigidbody:
   m_GameObject: {fileID: 1552138519}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -3748,8 +3748,8 @@ Rigidbody:
   m_GameObject: {fileID: 1567638264}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -3784,25 +3784,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -3938,25 +3938,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -4201,8 +4201,8 @@ Rigidbody:
   m_GameObject: {fileID: 1732166038}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -4237,25 +4237,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -4492,8 +4492,8 @@ Rigidbody:
   m_GameObject: {fileID: 923313579}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -4550,25 +4550,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -4687,8 +4687,8 @@ Rigidbody:
   m_GameObject: {fileID: 923313578}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -4745,25 +4745,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -4952,8 +4952,8 @@ Rigidbody:
   m_GameObject: {fileID: 923313583}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -5023,25 +5023,25 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
-    spring: 1
-    damper: 0
+    spring: 100
+    damper: 0.5
   m_LowAngularXLimit:
-    limit: 0
+    limit: -175
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 177
+    limit: 175
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 100
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 177
+    limit: 90
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
