@@ -91,7 +91,6 @@ public class AudioLoudnessDetection : MonoBehaviour
         source.Play();
 
         Debug.Log("mic input");
-
     }
 
 }
