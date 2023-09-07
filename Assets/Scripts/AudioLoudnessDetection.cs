@@ -26,7 +26,7 @@ public class AudioLoudnessDetection : MonoBehaviour
         _spectrum = new float[QSamples];
         _fSample = AudioSettings.outputSampleRate;
 
-        MicrophonetoAudioClip();
+        //MicrophonetoAudioClip();
         //check list of mic connected
         //foreach (var device in Microphone.devices)
         //{
