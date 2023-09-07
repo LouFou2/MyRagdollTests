@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioLoudnessDetection : MonoBehaviour
 {
     public AudioSource source;
     public AudioClip micClip;
+
+    public Slider dbSlider;
+    public TextMeshProUGUI dbValueText;
+
+    public Slider pitchSlider;
+    public TextMeshProUGUI pitchValueText;
 
     public float rmsVal;
     public float dbVal;
@@ -26,7 +34,7 @@ public class AudioLoudnessDetection : MonoBehaviour
         _spectrum = new float[QSamples];
         _fSample = AudioSettings.outputSampleRate;
 
-        MicrophonetoAudioClip();
+        MicrophoneToAudioClip();
         //check list of mic connected
         foreach (var device in Microphone.devices)
         {
@@ -36,11 +44,17 @@ public class AudioLoudnessDetection : MonoBehaviour
 
     void Update()
     {
-       AnalyzeSound(source);
+        AnalyzeSound(source);
 
-       Debug.Log("RMS: " + rmsVal.ToString("F2"));
-       Debug.Log(dbVal.ToString("F1") + " dB");
-       Debug.Log(pitchVal.ToString("F0") + " Hz");
+        /*Debug.Log("RMS: " + rmsVal.ToString("F2"));
+        Debug.Log(dbVal.ToString("F1") + " dB");
+        Debug.Log(pitchVal.ToString("F0") + " Hz");*/
+
+        dbSlider.value = dbVal;
+        dbValueText.text = "dB Value: " + dbVal.ToString("F1") + " dB";
+
+        pitchSlider.value = pitchVal;
+        pitchValueText.text = "Pitch Value: " + pitchVal.ToString("F0") + " Hz";
     }
 
 
@@ -53,6 +67,7 @@ public class AudioLoudnessDetection : MonoBehaviour
         {
             sum += _samples[i] * _samples[i]; // sum squared samples
         }
+
         rmsVal = Mathf.Sqrt(sum / QSamples); // rms = square root of average
         dbVal = 20 * Mathf.Log10(rmsVal / RefValue); // calculate dB
         if (dbVal < -160) dbVal = -160; // clamp it to -160dB min
@@ -79,15 +94,15 @@ public class AudioLoudnessDetection : MonoBehaviour
         pitchVal = freqN * (_fSample / 2) / QSamples; // convert index to frequency
     }
 
-    public void MicrophonetoAudioClip()
+    public void MicrophoneToAudioClip()
     {
         string micName = Microphone.devices[0];
         Debug.Log("mic input" + micName);
         micClip = Microphone.Start(micName, true, 20, AudioSettings.outputSampleRate);
         source.clip = micClip;
 
-        while (!(Microphone.GetPosition(micName) > 0));
-        { }
+        /*while (!(Microphone.GetPosition(micName) > 0));
+        { }*/
         source.Play();
 
         Debug.Log("mic input");
