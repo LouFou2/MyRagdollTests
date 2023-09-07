@@ -26,12 +26,12 @@ public class AudioLoudnessDetection : MonoBehaviour
         _spectrum = new float[QSamples];
         _fSample = AudioSettings.outputSampleRate;
 
-        //MicrophonetoAudioClip();
+        MicrophonetoAudioClip();
         //check list of mic connected
-        //foreach (var device in Microphone.devices)
-        //{
-        //    Debug.Log("Name: " + device);
-        //}
+        foreach (var device in Microphone.devices)
+        {
+            Debug.Log("Name: " + device);
+        }
     }
 
     void Update()
@@ -82,8 +82,14 @@ public class AudioLoudnessDetection : MonoBehaviour
     public void MicrophonetoAudioClip()
     {
         string micName = Microphone.devices[0];
+        Debug.Log("mic input" + micName);
         micClip = Microphone.Start(micName, true, 20, AudioSettings.outputSampleRate);
         source.clip = micClip;
+
+        while (!(Microphone.GetPosition(micName) > 0));
+        { }
+        source.Play();
+
         Debug.Log("mic input");
 
     }
