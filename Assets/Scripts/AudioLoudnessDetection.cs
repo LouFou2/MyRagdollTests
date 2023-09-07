@@ -6,25 +6,29 @@ using UnityEngine.UI;
 
 public class AudioLoudnessDetection : MonoBehaviour
 {
-    public AudioSource source;
-    public AudioClip micClip;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip micClip;
 
-    public Slider dbSlider;
-    public TextMeshProUGUI dbValueText;
+    [SerializeField] private Slider dbSlider;
+    [SerializeField] private TextMeshProUGUI dbValueText;
 
-    public Slider pitchSlider;
-    public TextMeshProUGUI pitchValueText;
+    [SerializeField] private Slider max_dbSlider;
+    [SerializeField] private TextMeshProUGUI max_dbValueText;
 
-    public float rmsVal;
+    [SerializeField] private Slider pitchSlider;
+    [SerializeField] private TextMeshProUGUI pitchValueText;
+
+    private float rmsVal;
     public float dbVal;
+    private float max_dbVal = -160f; // start at minimum
     public float pitchVal;
-    public float Threshold;
+    private float Threshold;
 
     private const int QSamples = 1024;
     private const float RefValue = 0.1f;
     
 
-    float[] _samples;
+    private float[] _samples;
     private float[] _spectrum;
     private float _fSample;
 
@@ -35,6 +39,7 @@ public class AudioLoudnessDetection : MonoBehaviour
         _fSample = AudioSettings.outputSampleRate;
 
         MicrophoneToAudioClip();
+
         //check list of mic connected
         foreach (var device in Microphone.devices)
         {
@@ -46,15 +51,21 @@ public class AudioLoudnessDetection : MonoBehaviour
     {
         AnalyzeSound(source);
 
-        /*Debug.Log("RMS: " + rmsVal.ToString("F2"));
-        Debug.Log(dbVal.ToString("F1") + " dB");
-        Debug.Log(pitchVal.ToString("F0") + " Hz");*/
-
+        // UI for decibels
         dbSlider.value = dbVal;
-        dbValueText.text = "dB Value: " + dbVal.ToString("F1") + " dB";
+        dbValueText.text = "dB Value:\n" + dbVal.ToString("F1") + " dB";
+        
+        // UI for max decibels
+        if (dbVal > max_dbVal) 
+        {
+            max_dbVal = dbVal;
+            max_dbSlider.value = dbVal;
+            max_dbValueText.text = "dB Max:\n" + dbVal.ToString("F1") + " dB";
+        }
 
+        // UI for pitch 
         pitchSlider.value = pitchVal;
-        pitchValueText.text = "Pitch Value: " + pitchVal.ToString("F0") + " Hz";
+        pitchValueText.text = "Pitch Value:\n" + pitchVal.ToString("F0") + " Hz";
     }
 
 
@@ -71,8 +82,9 @@ public class AudioLoudnessDetection : MonoBehaviour
         rmsVal = Mathf.Sqrt(sum / QSamples); // rms = square root of average
         dbVal = 20 * Mathf.Log10(rmsVal / RefValue); // calculate dB
         if (dbVal < -160) dbVal = -160; // clamp it to -160dB min
+        //if (dbVal > 0) dbVal = 0; // clamp it to 0dB max? probably not neccesarry
 
-                                        // get sound spectrum
+        // get sound spectrum
         audio.GetComponent<AudioSource>().GetSpectrumData(_spectrum, 0, FFTWindow.BlackmanHarris);
         float maxV = 0;
         var maxN = 0;
@@ -101,11 +113,10 @@ public class AudioLoudnessDetection : MonoBehaviour
         micClip = Microphone.Start(micName, true, 20, AudioSettings.outputSampleRate);
         source.clip = micClip;
 
-        /*while (!(Microphone.GetPosition(micName) > 0));
+        /*while (!(Microphone.GetPosition(micName) > 0)); // this should have something to do if there is no mic
         { }*/
-        source.Play();
 
-        Debug.Log("mic input");
+        source.Play();
     }
 
 }
