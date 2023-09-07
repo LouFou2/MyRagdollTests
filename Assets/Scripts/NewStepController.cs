@@ -9,8 +9,13 @@ public class NewStepController : MonoBehaviour
     private Vector3 currentPosition = Vector3.zero;
     private float HorizontalMoveDistance = 0f;
 
-    [SerializeField] private GameObject horizontalMover;
-    [SerializeField] private GameObject verticalMover;
+    [SerializeField] private GameObject horizontalSineMover;
+    [SerializeField] private GameObject verticalSineMover;
+    [SerializeField] private GameObject horizontalCosineMover;
+    [SerializeField] private GameObject verticalCosineMover;
+
+    [SerializeField] private GameObject RotationVisualiser;
+    private float fullDegreesRotaion = 0f;
 
     void Start()
     {
@@ -25,38 +30,54 @@ public class NewStepController : MonoBehaviour
         Vector2 horizontalLastPosition = new Vector2(lastPosition.z, lastPosition.x);           // only using x z movement for calculating horizontal movement
         Vector2 horizontalCurrentPosition = new Vector2(currentPosition.z, currentPosition.x);  // important: z is forward (same as x axis for 2d), so z is first
         // Calculate HorizontalMoveDistance using magnitude
-        HorizontalMoveDistance += (horizontalCurrentPosition - horizontalLastPosition).magnitude;
+        float horizontalDistanceMovedInUpdate = (horizontalCurrentPosition - horizontalLastPosition).magnitude; ;
+        HorizontalMoveDistance += horizontalDistanceMovedInUpdate;
         Debug.Log(HorizontalMoveDistance);
 
+        //***HAVE TO FIND A GOOD WAY TO RESET THE HorizontalMoveDistance WHEN WAVE CYCLES ARE COMPLETED
         /*if (HorizontalMoveDistance >= horizontalMoverAmplitude * 4) // * 4 to allow for full wave cycle (up-down,down-up)
         { HorizontalMoveDistance = 0; }*/
-        //***HAVE TO FIND A GOOD WAY TO RESET THE HorizontalMoveDistance WHEN WAVE CYCLES ARE COMPLETED
 
         //-- Sine Waves: to be referenced by other objects for movement --//
-        float verticalSine = Mathf.Sin(HorizontalMoveDistance);
-        float horizontalSine = Mathf.Sin(HorizontalMoveDistance);   // sine value starts at the center of the amplitude range.
+        float movementSineValue = Mathf.Sin(HorizontalMoveDistance);    // Sine value starts at the middle of the amplitude range.
 
         //-- Cosine Waves: to be referenced by other objects for movement --//
-        float verticalCosine = Mathf.Cos(HorizontalMoveDistance);
-        float horizontalCosine = Mathf.Cos(HorizontalMoveDistance);   // cosine value starts at the max of the amplitude range.
+        float movementCosineValue = Mathf.Cos(HorizontalMoveDistance);  // cosine value starts at the max of the amplitude range.
 
-        Vector3 verticalMoverVector = verticalMover.transform.localPosition;
-        Vector3 addedVerticalSineMovement = new Vector3(verticalMoverVector.x, verticalSine, verticalMoverVector.z); //added the sine value on the y
-        verticalMover.transform.localPosition = addedVerticalSineMovement;
+        //-- Rotation Visualisation --//
+        float degreesRotation = horizontalDistanceMovedInUpdate * Mathf.Rad2Deg;
+        fullDegreesRotaion += degreesRotation;
+        RotationVisualiser.transform.Rotate(degreesRotation, 0f, 0f, Space.Self);
+        Debug.Log(fullDegreesRotaion);
+        if ( fullDegreesRotaion >= 360 ) { 
+            HorizontalMoveDistance = 0;
+            fullDegreesRotaion = 0f;
+        }
 
-        Vector3 horizontalMoverVector = horizontalMover.transform.localPosition;
-        Vector3 addedHorizontalSineMovement = new Vector3(horizontalMoverVector.x, horizontalMoverVector.y, horizontalSine); //added cosine value on z (could be x too)
-        horizontalMover.transform.localPosition = addedHorizontalSineMovement;
+        //-- Examples: Sine / Cosine Movement
+        Vector3 verticalSineMoverVector = verticalSineMover.transform.localPosition;
+        Vector3 addedVerticalSineMovement = new Vector3(verticalSineMoverVector.x, movementSineValue, verticalSineMoverVector.z); //added the sine value on the y
+        verticalSineMover.transform.localPosition = addedVerticalSineMovement;
 
-        // To move another object in a horizontal sine movement:
-        // float otherObject_H_Sine = horizontalSine * otherObject_H_Amplitude;
+        Vector3 horizontalSineMoverVector = horizontalSineMover.transform.localPosition;
+        Vector3 addedHorizontalSineMovement = new Vector3(horizontalSineMoverVector.x, horizontalSineMoverVector.y, movementSineValue); //added cosine value on z (could be x too)
+        horizontalSineMover.transform.localPosition = addedHorizontalSineMovement;
+
+        Vector3 verticalCosineMoverVector = verticalCosineMover.transform.localPosition;
+        Vector3 addedVerticalCosineMovement = new Vector3(verticalCosineMoverVector.x, movementCosineValue, verticalCosineMoverVector.z); //added the sine value on the y
+        verticalCosineMover.transform.localPosition = addedVerticalCosineMovement;
+
+        Vector3 horizontalCosineMoverVector = horizontalCosineMover.transform.localPosition;
+        Vector3 addedHorizontalCosineMovement = new Vector3(horizontalCosineMoverVector.x, horizontalCosineMoverVector.y, movementCosineValue); //added cosine value on z (could be x too)
+        horizontalCosineMover.transform.localPosition = addedHorizontalCosineMovement;
+
+        // To move another object using sine/cosine movement:
+        // e.g:
+        // float otherObject_H_Sine = horizontalSine * otherObject_H_Amplitude; // use a specific amplitude appropriate for object's movement
         // ...some calculations
         // otherObject.transform.localPosition = ...
 
-        // To move another object in a vertical sine movement:
-        // float otherObject_V_Sine = verticalSine * otherObject_V_Amplitude;
-        // ...some calculations
-        // otherObject.transform.localPosition = ...
+
 
         // -- *     THIS HAS TO STAY AT THE END * -- //
         // Update lastPosition for the next frame
