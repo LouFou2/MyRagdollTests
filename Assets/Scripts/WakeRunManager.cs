@@ -13,7 +13,7 @@ public class WakeRunManager : MonoBehaviour
     [SerializeField] private float dB_RangeFloor = -30f;
     [SerializeField] private float dB_RangeCeiling = -3f;
     private float dbValue = -160f;
-    private float toRunTransition = 0f;
+    public float toRunTransition = 0f;
 
     void Start()
     {
