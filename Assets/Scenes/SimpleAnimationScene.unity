@@ -1305,7 +1305,7 @@ GameObject:
   - component: {fileID: 384790174}
   - component: {fileID: 384790173}
   m_Layer: 0
-  m_Name: Audio
+  m_Name: Audio_MicInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3588,8 +3588,8 @@ MonoBehaviour:
   controlAnimator: {fileID: 57844664}
   ragAnimator: {fileID: 1985277903}
   dbValueScript: {fileID: 384790173}
-  dB_RangeFloor: -50
-  dB_RangeCeiling: -5
+  dB_RangeFloor: -35
+  dB_RangeCeiling: -7
 --- !u!4 &988661818
 Transform:
   m_ObjectHideFlags: 0

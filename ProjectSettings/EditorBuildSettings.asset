@@ -4,6 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SimpleAnimationScene.unity
+    guid: 1b4c6b83fbf301d47b56cd6a9e65256e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 7ae306d23c54a5e47af818ba21affdea, type: 2}
