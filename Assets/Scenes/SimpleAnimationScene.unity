@@ -879,7 +879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 1982949896}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 0
   powerY: 0
@@ -2227,7 +2227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 558126760}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 0
   powerY: 0
@@ -2514,7 +2514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 1239684336}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 0
   powerY: 0
@@ -2662,7 +2662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 1333685628}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 0
   powerY: 0
@@ -3163,7 +3163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 95082859}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 0
   powerY: 0
@@ -3294,7 +3294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 1040764383}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 0
   powerY: 0
@@ -3447,7 +3447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 2004345032}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 0
   powerY: 0
@@ -3581,7 +3581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 951356534}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 0
   powerY: 0
@@ -3956,7 +3956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 197420012}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 1
   powerY: 1
@@ -4007,7 +4007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 1223589133}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 0
   powerY: 0
@@ -4277,7 +4277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 93242206}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 0
   powerY: 0
@@ -4429,7 +4429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 583219535}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 0
   powerY: 0
@@ -5030,7 +5030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 585416309}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 0
   powerY: 0
@@ -5148,7 +5148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 2057120005}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 1
   powerY: 1
@@ -5779,7 +5779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 616893629}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 0
   powerY: 0
@@ -5974,7 +5974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 16379555}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 0
   powerY: 0
@@ -6092,7 +6092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 1631937669}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 0
   powerY: 0
@@ -6611,7 +6611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLimb: {fileID: 830857500}
   ragdollSwitchEnabled: 1
-  ragdollPowerMin: 0
+  ragdollPowerMin: 0.001
   ragdollPowerFactor: 1
   powerX: 0
   powerY: 0
