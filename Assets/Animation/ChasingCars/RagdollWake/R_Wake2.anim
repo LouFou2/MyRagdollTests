@@ -359,6 +359,348 @@ AnimationClip:
     path: Armature/Root/Pelvis/TumTum/Torso/Torso.001/Neck/Head
     classID: 114
     script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/Hip.R/Leg_Upr_R/Leg_Lwr_R
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/Hip.R/Leg_Upr_R
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/Hip.R
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/Hip.L/Leg_Upr_L/Leg_Lwr_L
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/Hip.L/Leg_Upr_L
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/Hip.L
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Torso.001/Neck/Head
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Torso.001/Neck
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Torso.001
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Scapula_R/Arm_Upr_R/Arm_Lwr_R
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Scapula_R/Arm_Upr_R
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Scapula_R
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Scapula_L/Arm_Upr_L/Arm_Lwr_L
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Scapula_L/Arm_Upr_L
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Scapula_L
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -367,6 +709,132 @@ AnimationClip:
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
     genericBindings:
+    - serializedVersion: 2
+      path: 2132733448
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 163339179
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3321529486
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3787072250
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 255035653
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1073068525
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2451480487
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1454805397
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 4286841412
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2803694134
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 443874664
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1543869095
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 968373956
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 486223814
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2785718212
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1455713952
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 454086153
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1812923120
+      attribute: 4069974916
+      script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
     - serializedVersion: 2
       path: 1812923120
       attribute: 1149012935
@@ -855,6 +1323,348 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: ragdollPowerFactor
     path: Armature/Root/Pelvis/TumTum/Torso/Torso.001/Neck/Head
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/Hip.R/Leg_Upr_R/Leg_Lwr_R
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/Hip.R/Leg_Upr_R
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/Hip.R
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/Hip.L/Leg_Upr_L/Leg_Lwr_L
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/Hip.L/Leg_Upr_L
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/Hip.L
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Torso.001/Neck/Head
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Torso.001/Neck
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Torso.001
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Scapula_R/Arm_Upr_R/Arm_Lwr_R
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Scapula_R/Arm_Upr_R
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Scapula_R
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Scapula_L/Arm_Upr_L/Arm_Lwr_L
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Scapula_L/Arm_Upr_L
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso/Scapula_L
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum/Torso
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis/TumTum
+    classID: 114
+    script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: ragdollSwitchEnabled
+    path: Armature/Root/Pelvis
     classID: 114
     script: {fileID: 11500000, guid: 4f1bd4440b380b74bb71a96074f2ae83, type: 3}
   m_EulerEditorCurves: []

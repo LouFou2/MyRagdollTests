@@ -12,8 +12,11 @@ public class AudioLoudnessDetection : MonoBehaviour
     public Slider dbSlider;
     public TextMeshProUGUI dbValueText;
 
-    public Slider pitchSlider;
-    public TextMeshProUGUI pitchValueText;
+    public Slider dbFloorSlider;
+    public TextMeshProUGUI dbFloorText;
+
+    public Slider dbCeilingSlider;
+    public TextMeshProUGUI dbCeilingText;
 
     public float rmsVal;
     public float dbVal;
@@ -51,10 +54,13 @@ public class AudioLoudnessDetection : MonoBehaviour
         Debug.Log(pitchVal.ToString("F0") + " Hz");*/
 
         dbSlider.value = dbVal;
-        dbValueText.text = "dB Value: " + dbVal.ToString("F1") + " dB";
+        dbValueText.text = "dB Value:\n" + dbVal.ToString("F1") + "dB";
 
-        pitchSlider.value = pitchVal;
-        pitchValueText.text = "Pitch Value: " + pitchVal.ToString("F0") + " Hz";
+        //dbFloorSlider.value = dbFloorSlider.value;
+        dbFloorText.text = "db Min\nThreshold:\n" + dbFloorSlider.value.ToString("F0") + "dB";
+
+        //dbCeilingSlider.value = dbCeilingSlider.value;
+        dbCeilingText.text = "db Max:\nThreshold:\n" + dbCeilingSlider.value.ToString("F0") + "dB";
     }
 
 
