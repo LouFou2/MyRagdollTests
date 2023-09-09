@@ -351,7 +351,7 @@ AudioSource:
   m_GameObject: {fileID: 57844658}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 379b4bd5a717bac478e559bb0b585338, type: 2}
+  OutputAudioMixerGroup: {fileID: -5909410358313100166, guid: 379b4bd5a717bac478e559bb0b585338, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3e12e2259437d8043a2a7b3ccc1045a5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1062,10 +1062,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -2410,10 +2410,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -2697,10 +2697,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -2845,10 +2845,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -3346,10 +3346,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -3477,10 +3477,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -3630,10 +3630,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -3764,10 +3764,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -4022,10 +4022,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -4191,10 +4191,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -4461,10 +4461,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -4613,10 +4613,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -5214,10 +5214,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -5332,10 +5332,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -5833,7 +5833,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740914832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.01, z: 0}
   m_LocalScale: {x: 0.91, y: 0.91, z: 0.91}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5963,10 +5963,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -6158,10 +6158,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -6276,10 +6276,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -6795,10 +6795,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
