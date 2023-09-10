@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028475, g: 0.22571571, b: 0.30692416, a: 1}
+  m_IndirectSpecularColor: {r: 0.18251961, g: 0.22823267, b: 0.30722475, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -162,7 +162,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -351,7 +351,7 @@ AudioSource:
   m_GameObject: {fileID: 57844658}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 379b4bd5a717bac478e559bb0b585338, type: 2}
+  OutputAudioMixerGroup: {fileID: -5909410358313100166, guid: 379b4bd5a717bac478e559bb0b585338, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3e12e2259437d8043a2a7b3ccc1045a5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1062,10 +1062,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -2174,14 +2174,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.3762202, y: -0.4128639, z: 0.19252159, w: 0.80680686}
+  m_LocalRotation: {x: 0.31457105, y: -0.39555278, z: 0.14631939, w: 0.8503963}
   m_LocalPosition: {x: 1.03, y: 3, z: -3.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -54.2, z: 0}
+  m_LocalEulerAnglesHint: {x: 40.6, y: -49.89, z: 0}
 --- !u!1 &709338410
 GameObject:
   m_ObjectHideFlags: 0
@@ -2410,10 +2410,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -2697,10 +2697,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -2845,10 +2845,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -3346,10 +3346,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -3477,10 +3477,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -3630,10 +3630,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -3764,10 +3764,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -3896,14 +3896,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.05503734, y: 0, z: 0, w: 0.99848425}
-  m_LocalPosition: {x: -0.000000094700525, y: 1.68, z: -3.92}
+  m_LocalRotation: {x: 0.053748284, y: -0.21483533, z: 0.011841915, w: 0.9750983}
+  m_LocalPosition: {x: 2.01, y: 1.68, z: -3.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 6.31, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.31, y: -24.85, z: 0}
 --- !u!1 &988661816
 GameObject:
   m_ObjectHideFlags: 0
@@ -4022,10 +4022,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -4191,10 +4191,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -4327,7 +4327,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4461,10 +4461,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -4613,10 +4613,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -5048,7 +5048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1498041132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5214,10 +5214,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -5332,10 +5332,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -5833,7 +5833,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740914832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.01, z: 0}
   m_LocalScale: {x: 0.91, y: 0.91, z: 0.91}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5963,10 +5963,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -6158,10 +6158,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -6276,10 +6276,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
@@ -6588,7 +6588,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6795,10 +6795,10 @@ ConfigurableJoint:
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
-    spring: 1
+    spring: 1000
     damper: 0
   m_AngularYLimit:
-    limit: 177
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
