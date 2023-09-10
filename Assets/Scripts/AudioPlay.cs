@@ -32,7 +32,7 @@ public class AudioPlay : MonoBehaviour
     }
     public void PlayWoof() 
     {
-        woofAudio.Stop();
+        //woofAudio.Stop();
         woofAudio.Play();
     }
     public void StopWoof() //In case I need it.
