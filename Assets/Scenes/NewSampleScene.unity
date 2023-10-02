@@ -1330,6 +1330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 430d7b1707295344586ab3808f79e92c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _targetObject: {fileID: 2067190979}
+  _targetMovementThreshold: 0.00001
   _springTip: 0.03
   _springConstant: 400
   _dampingFactor: 0.5
@@ -4955,6 +4957,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 430d7b1707295344586ab3808f79e92c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _targetObject: {fileID: 1121864189}
+  _targetMovementThreshold: 0.00001
   _springTip: 0.03
   _springConstant: 400
   _dampingFactor: 0.5
