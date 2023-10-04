@@ -26,7 +26,7 @@ public class CopyLimb : MonoBehaviour
     [SerializeField] private float ragdollPowerMin = 0f;
     private float ragdollPowerMax = 1f;
     [SerializeField]
-    [Range(0f, 1f)] private float ragdollPowerFactor = 1f; 
+    [Range(0f, 1f)] public float ragdollPowerFactor = 1f; 
     [SerializeField] private bool powerX = false;
     [SerializeField] private bool powerY = false;
     [SerializeField] private bool powerZ = false;
