@@ -5,6 +5,7 @@ using UnityEngine;
 public class MorphManager : MonoBehaviour
 {
     public Animator morphAnimator; // assign the ragdoll animator in inspector
+    public BitcrushManager bitCrushManager; // assign the BitCrush Manager in inspector
     [SerializeField] private GameObject _morphMeshObject; // assign the mesh object in inspector
     [SerializeField] [Range(0f,3f)] private float _morphParam = 0f;
     public Mesh[] _morphMeshes;
@@ -24,6 +25,7 @@ public class MorphManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float bitCrushNormalized = Mathf.InverseLerp(0, 3, _morphParam); // morphParam range is 0-3
         if(_morphParam < 1f) 
         {
             _morphRenderer.sharedMesh = _morphMeshes[0];
@@ -51,5 +53,7 @@ public class MorphManager : MonoBehaviour
             Debug.Log(decimateValue3);
             //*** the last mesh doesn't have a shape key right now ***//
         }
+        morphAnimator.SetFloat("MorphParam", _morphParam);
+        bitCrushManager.bitCrushAmount = bitCrushNormalized * 2; // *2 because bitCrushAmount Range is 0-2
     }
 }
