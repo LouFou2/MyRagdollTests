@@ -61,7 +61,7 @@ public class BitcrushManager : MonoBehaviour
         highPassFilters[1].cutoffFrequency = filterAmount;
 
         float pitchFactor = Mathf.InverseLerp(0, 2, bitCrushAmount);
-        float pitchAmount = 1 - pitchFactor; // ***improve calculation to use a good min-max range
+        float pitchAmount = 1 - (0.05f * pitchFactor); //  0.99 is 1 - min pitch value, in this case 0.01 (can adjust this)
         audioSources[0].pitch = pitchAmount;
         audioSources[1].pitch = pitchAmount;
     }
