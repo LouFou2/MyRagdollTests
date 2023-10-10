@@ -1475,7 +1475,7 @@ MonoBehaviour:
   floorMaterial: {fileID: 0}
   _characterColor: {r: 0, g: 0, b: 0, a: 0}
   _floorColor: {r: 0, g: 0, b: 0, a: 0}
-  _characterFresnelPower: 0
+  _characterFresnelPower: 7
 --- !u!4 &558126760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7013596385850532635, guid: a6db67c90c2ed78429aae567949ad303, type: 3}
