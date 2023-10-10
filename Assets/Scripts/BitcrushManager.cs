@@ -8,10 +8,11 @@ public class BitcrushManager : MonoBehaviour
     public BitCrusher[] bitCrushers;
     public AudioHighPassFilter[] highPassFilters; // high pass filter makes the bit crush sound good
     public AudioSource[] audioSources;
-
-    [Range(0,2)] public float bitCrushAmount = 0f;
+    
+    [Range(0,2)] public float bitCrushAmount = 0f; // fading between 3 bitdepths, at index 0, 1, 2 (bits 8, 4, 2)
     [HideInInspector] public float fadeValue1;
     [HideInInspector] public float fadeValue2;
+    
     void Start()
     {
         bitCrushers = new BitCrusher[audioObjects.Length];
@@ -24,6 +25,7 @@ public class BitcrushManager : MonoBehaviour
             highPassFilters[i] = audioObjects[i].GetComponent<AudioHighPassFilter>();
             audioSources[i] = audioObjects[i].GetComponent<AudioSource>();
         }
+        
     }
 
     void Update()

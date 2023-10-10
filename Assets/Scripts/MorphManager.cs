@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class MorphManager : MonoBehaviour
@@ -7,14 +8,29 @@ public class MorphManager : MonoBehaviour
     public Animator morphAnimator; // assign the ragdoll animator in inspector
     public Animator controlAnimator; // assign the ragdoll animator in inspector
     public BitcrushManager bitCrushManager; // assign the BitCrush Manager in inspector
-    [SerializeField] private GameObject _morphMeshObject; // assign the mesh object in inspector
+    public GameObject _morphMeshObject; // assign the mesh object in inspector
+    public GameObject _floorMeshObject; // assign the floor mesh object in inspector
     [SerializeField] [Range(0f,5f)] private float _morphParam = 0f;
     public Mesh[] _morphMeshes;
-    private SkinnedMeshRenderer _morphRenderer;
-    public float controlAnimTransition;
+    public SkinnedMeshRenderer _morphRenderer;
+    public MeshRenderer _floorRenderer;
+
+    // Materials Shader Properties ==//
+    public Material characterMaterial;
+    public Material floorMaterial;
+    public Color _characterColor;
+    public Color _floorColor;
+    public float _characterFresnelPower;
     void Start()
     {
         _morphRenderer = _morphMeshObject.GetComponent<SkinnedMeshRenderer>();
+        characterMaterial = _morphRenderer.sharedMaterial;
+        _characterColor = characterMaterial.GetColor("_Color"); // getting properties from shader
+        _characterFresnelPower = characterMaterial.GetFloat("_FresnelPower"); 
+
+        _floorRenderer = _floorMeshObject.GetComponent<MeshRenderer>();
+        floorMaterial = _floorRenderer.sharedMaterial;
+        _floorColor = floorMaterial.GetColor("_Color"); // getting properties from shader
 
         if (morphAnimator == null )
             Debug.LogError("Assign ragdoll animator in inspector");
@@ -29,7 +45,7 @@ public class MorphManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float bitCrushNormalized = Mathf.InverseLerp(0, 5, _morphParam); // morphParam range is 0-5
+        float morphAmountNormalized = Mathf.InverseLerp(0, 5, _morphParam); // morphParam range is 0-5
         if(_morphParam == 0)
             _morphRenderer.sharedMesh = _morphMeshes[0];
 
@@ -69,11 +85,20 @@ public class MorphManager : MonoBehaviour
             Debug.Log(decimateValue4);
             _morphRenderer.SetBlendShapeWeight(0, 100 - decimateValue4);
         }
-        float controlAnimatorParam = Mathf.InverseLerp(0,5, _morphParam);
-        float reverseAnimParam = 1 - controlAnimatorParam; //reverse it because animation slows opposite relation to the decimation
+        float controlAnimatorParam = Mathf.InverseLerp(0, 5, _morphParam); // calculation to pass param to Controller Animator
+        float reverseAnimParam = 1 - controlAnimatorParam; // (reverse it because animation slows opposite relation to the decimation)
 
+        //== The Ragdoll Animator ==//
         morphAnimator.SetFloat("MorphParam", _morphParam);
+        //== The Controller Animator ==//
         controlAnimator.SetFloat("WalkSpeed", reverseAnimParam);
-        bitCrushManager.bitCrushAmount = bitCrushNormalized * 2; // *2 because bitCrushAmount Range is 0-2
+        //== The Bitcrush Audio Effect ==//
+        bitCrushManager.bitCrushAmount = morphAmountNormalized * 2; // *2 because bitCrushAmount Range is 0-2
+        //== Character Material (Shader Properties) ==//
+        characterMaterial.SetColor("_Color", _characterColor);
+        _characterFresnelPower = 20 - (morphAmountNormalized * 20); // 20 is the max amount currently set in shader for the float property
+        characterMaterial.SetFloat("_FresnelPower", _characterFresnelPower);
+        //== Floor Material (Shader Properties) ==//
+        floorMaterial.SetColor("_Color", _floorColor);
     }
 }
