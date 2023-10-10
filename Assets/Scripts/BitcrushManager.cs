@@ -12,7 +12,6 @@ public class BitcrushManager : MonoBehaviour
     [Range(0,2)] public float bitCrushAmount = 0f; // fading between 3 bitdepths, at index 0, 1, 2 (bits 8, 4, 2)
     [HideInInspector] public float fadeValue1;
     [HideInInspector] public float fadeValue2;
-    
     void Start()
     {
         bitCrushers = new BitCrusher[audioObjects.Length];

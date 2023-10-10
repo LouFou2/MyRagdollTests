@@ -8,37 +8,42 @@ public class MorphManager : MonoBehaviour
     public Animator morphAnimator; // assign the ragdoll animator in inspector
     public Animator controlAnimator; // assign the ragdoll animator in inspector
     public BitcrushManager bitCrushManager; // assign the BitCrush Manager in inspector
-    public GameObject _morphMeshObject; // assign the mesh object in inspector
-    public GameObject _floorMeshObject; // assign the floor mesh object in inspector
+    public GameObject morphMeshObject; // assign the mesh object in inspector
+    public GameObject floorMeshObject; // assign the floor mesh object in inspector
     [SerializeField] [Range(0f,5f)] private float _morphParam = 0f;
-    public Mesh[] _morphMeshes;
-    public SkinnedMeshRenderer _morphRenderer;
-    public MeshRenderer _floorRenderer;
+    public Mesh[] morphMeshes;
+    public SkinnedMeshRenderer morphRenderer;
+    public MeshRenderer floorRenderer;
 
     // Materials Shader Properties ==//
     public Material characterMaterial;
     public Material floorMaterial;
-    public Color _characterColor;
-    public Color _floorColor;
-    public float _characterFresnelPower;
+    public Color characterColor;
+    public float colorMixer;
+    public Color floorColor;
+    public float characterFresnelPower;
+
+    private void Awake()
+    {
+        morphRenderer = morphMeshObject.GetComponent<SkinnedMeshRenderer>();
+        characterMaterial = morphRenderer.sharedMaterial;
+        characterColor = characterMaterial.GetColor("_Color"); // getting properties from shader
+        characterFresnelPower = characterMaterial.GetFloat("_FresnelPower");
+        colorMixer = characterMaterial.GetFloat("_ColorMixer");
+
+        floorRenderer = floorMeshObject.GetComponent<MeshRenderer>();
+        floorMaterial = floorRenderer.sharedMaterial;
+        floorColor = floorMaterial.GetColor("_Color"); // getting properties from shader
+    }
     void Start()
     {
-        _morphRenderer = _morphMeshObject.GetComponent<SkinnedMeshRenderer>();
-        characterMaterial = _morphRenderer.sharedMaterial;
-        _characterColor = characterMaterial.GetColor("_Color"); // getting properties from shader
-        _characterFresnelPower = characterMaterial.GetFloat("_FresnelPower"); 
-
-        _floorRenderer = _floorMeshObject.GetComponent<MeshRenderer>();
-        floorMaterial = _floorRenderer.sharedMaterial;
-        _floorColor = floorMaterial.GetColor("_Color"); // getting properties from shader
-
         if (morphAnimator == null )
             Debug.LogError("Assign ragdoll animator in inspector");
         if (controlAnimator == null)
             Debug.LogError("Assign control animator in inspector");
-        if (_morphRenderer == null)
+        if (morphRenderer == null)
             Debug.LogError("Assign ragdoll character object that has mesh mesh in inspector");
-        if (_morphMeshes.Length < 4)
+        if (morphMeshes.Length < 4)
             Debug.LogError("You need 5 morph meshes");
     }
 
@@ -47,43 +52,43 @@ public class MorphManager : MonoBehaviour
     {
         float morphAmountNormalized = Mathf.InverseLerp(0, 5, _morphParam); // morphParam range is 0-5
         if(_morphParam == 0)
-            _morphRenderer.sharedMesh = _morphMeshes[0];
+            morphRenderer.sharedMesh = morphMeshes[0];
 
         if (_morphParam > 0f && _morphParam < 1f) 
         {
-            _morphRenderer.sharedMesh = _morphMeshes[1];
+            morphRenderer.sharedMesh = morphMeshes[1];
             // lerp the "Decimate" BlendShape value between 0-1, using _morphParam (0-1)
             float decimateValue1 = Mathf.InverseLerp(0, 1, _morphParam);
             decimateValue1 *= 100f;
             Debug.Log(decimateValue1);
-            _morphRenderer.SetBlendShapeWeight(0, 100 - decimateValue1);
+            morphRenderer.SetBlendShapeWeight(0, 100 - decimateValue1);
         }
         if (_morphParam >= 1f && _morphParam < 2f)
         {
-            _morphRenderer.sharedMesh = _morphMeshes[2];
+            morphRenderer.sharedMesh = morphMeshes[2];
             // lerp the "Decimate" BlendShape value between 0-1, using _morphParam (1-2)
             float decimateValue2 = Mathf.InverseLerp(1, 2, _morphParam);
             decimateValue2 *= 100f;
             Debug.Log(decimateValue2);
-            _morphRenderer.SetBlendShapeWeight(0, 100 - decimateValue2);
+            morphRenderer.SetBlendShapeWeight(0, 100 - decimateValue2);
         }
         if (_morphParam >= 2f && _morphParam < 3f)
         {
-            _morphRenderer.sharedMesh = _morphMeshes[3];
+            morphRenderer.sharedMesh = morphMeshes[3];
             // lerp the "Decimate" BlendShape value between 0-1, using _morphParam (2-3)
             float decimateValue3 = Mathf.InverseLerp(2, 3, _morphParam);
             decimateValue3 *= 100f;
             Debug.Log(decimateValue3);
-            _morphRenderer.SetBlendShapeWeight(0, 100 - decimateValue3);
+            morphRenderer.SetBlendShapeWeight(0, 100 - decimateValue3);
         }
         if (_morphParam >= 3f && _morphParam < 4f)
         {
-            _morphRenderer.sharedMesh = _morphMeshes[4];
+            morphRenderer.sharedMesh = morphMeshes[4];
             // lerp the "Decimate" BlendShape value between 0-1, using _morphParam (3-4)
             float decimateValue4 = Mathf.InverseLerp(3, 4, _morphParam);
             decimateValue4 *= 100f;
             Debug.Log(decimateValue4);
-            _morphRenderer.SetBlendShapeWeight(0, 100 - decimateValue4);
+            morphRenderer.SetBlendShapeWeight(0, 100 - decimateValue4);
         }
         float controlAnimatorParam = Mathf.InverseLerp(0, 5, _morphParam); // calculation to pass param to Controller Animator
         float reverseAnimParam = 1 - controlAnimatorParam; // (reverse it because animation slows opposite relation to the decimation)
@@ -95,10 +100,12 @@ public class MorphManager : MonoBehaviour
         //== The Bitcrush Audio Effect ==//
         bitCrushManager.bitCrushAmount = morphAmountNormalized * 2; // *2 because bitCrushAmount Range is 0-2
         //== Character Material (Shader Properties) ==//
-        characterMaterial.SetColor("_Color", _characterColor);
-        _characterFresnelPower = 20 - (morphAmountNormalized * 20); // 20 is the max amount currently set in shader for the float property
-        characterMaterial.SetFloat("_FresnelPower", _characterFresnelPower);
+        characterMaterial.SetColor("_Color", characterColor);
+        colorMixer = Mathf.Clamp01( morphAmountNormalized * 4); // times 4 so it transitions within first quarter of transition (can adjust)
+        characterMaterial.SetFloat("_ColorMixer", colorMixer);
+        characterFresnelPower = 20 - (morphAmountNormalized * 20); // 20 is the max amount currently set in shader for the float property
+        characterMaterial.SetFloat("_FresnelPower", characterFresnelPower);
         //== Floor Material (Shader Properties) ==//
-        floorMaterial.SetColor("_Color", _floorColor);
+        floorMaterial.SetColor("_Color", floorColor);
     }
 }
