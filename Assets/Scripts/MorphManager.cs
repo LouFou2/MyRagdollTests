@@ -22,6 +22,8 @@ public class MorphManager : MonoBehaviour
     public float colorMixer;
     public Color floorColor;
     public float characterFresnelPower;
+    public float characterColorAlpha;
+    public float emissionAmount;
 
     private void Awake()
     {
@@ -30,6 +32,8 @@ public class MorphManager : MonoBehaviour
         characterColor = characterMaterial.GetColor("_Color"); // getting properties from shader
         characterFresnelPower = characterMaterial.GetFloat("_FresnelPower");
         colorMixer = characterMaterial.GetFloat("_ColorMixer");
+        characterColorAlpha = characterMaterial.GetFloat("_AlphaFactor");
+        emissionAmount = characterMaterial.GetFloat("_EmissionMultiplier");
 
         floorRenderer = floorMeshObject.GetComponent<MeshRenderer>();
         floorMaterial = floorRenderer.sharedMaterial;
@@ -51,14 +55,14 @@ public class MorphManager : MonoBehaviour
     void Update()
     {
         float morphAmountNormalized = Mathf.InverseLerp(0, 5, _morphParam); // morphParam range is 0-5
-        if(_morphParam == 0)
+        if(_morphParam <= 0.01)
             morphRenderer.sharedMesh = morphMeshes[0];
 
-        if (_morphParam > 0f && _morphParam < 1f) 
+        if (_morphParam > 0.01f && _morphParam < 1f) 
         {
             morphRenderer.sharedMesh = morphMeshes[1];
             // lerp the "Decimate" BlendShape value between 0-1, using _morphParam (0-1)
-            float decimateValue1 = Mathf.InverseLerp(0, 1, _morphParam);
+            float decimateValue1 = Mathf.InverseLerp(0.01f, 1, _morphParam);
             decimateValue1 *= 100f;
             Debug.Log(decimateValue1);
             morphRenderer.SetBlendShapeWeight(0, 100 - decimateValue1);
@@ -95,16 +99,25 @@ public class MorphManager : MonoBehaviour
 
         //== The Ragdoll Animator ==//
         morphAnimator.SetFloat("MorphParam", _morphParam);
+
         //== The Controller Animator ==//
         controlAnimator.SetFloat("WalkSpeed", reverseAnimParam);
+
         //== The Bitcrush Audio Effect ==//
         bitCrushManager.bitCrushAmount = morphAmountNormalized * 2; // *2 because bitCrushAmount Range is 0-2
+
         //== Character Material (Shader Properties) ==//
         characterMaterial.SetColor("_Color", characterColor);
         colorMixer = Mathf.Clamp01( morphAmountNormalized * 4); // times 4 so it transitions within first quarter of transition (can adjust)
         characterMaterial.SetFloat("_ColorMixer", colorMixer);
-        characterFresnelPower = 20 - (morphAmountNormalized * 20); // 20 is the max amount currently set in shader for the float property
+        float fresnelAmount = Mathf.Clamp((morphAmountNormalized * 40), 0, 20); // 40 = 20 * 2 (can adjust 2 for the multiplier, to increase speed of transition)
+        characterFresnelPower = 20 - fresnelAmount; // 20 is the max amount currently set in shader for the float property
         characterMaterial.SetFloat("_FresnelPower", characterFresnelPower);
+        float alphaFader = Mathf.Clamp01(morphAmountNormalized * 2); // can adjust this value, it just multiplies the speed of the transition
+        characterMaterial.SetFloat("_AlphaFactor", 1 - alphaFader);
+        float emissionAmount = morphAmountNormalized * 5;
+        characterMaterial.SetFloat("_EmissionMultiplier", emissionAmount);
+
         //== Floor Material (Shader Properties) ==//
         floorMaterial.SetColor("_Color", floorColor);
     }
