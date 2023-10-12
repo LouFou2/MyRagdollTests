@@ -10,11 +10,12 @@ Material:
   m_Name: CharacterSolid
   m_Shader: {fileID: -6465566751694194690, guid: 15c5230f39b2ecb4a931f697b9d86bd4, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -72,12 +73,28 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_183f4ecdcbfe4dabaf69789626bd6279_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 3dd01c25f738b5c4297e48a2da876b7c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_23bb41dc6f92404f826afc115b08bb95_Out_0:
+        m_Texture: {fileID: 2800000, guid: 205348735f7129e44897068b2de99b95, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_a0b1d733d4dc462e859ef97cacb0d658_Out_0:
+        m_Texture: {fileID: 2800000, guid: 1ba58ad8170d2d84393bcf1b83115334, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Texture2DAsset_b0ab1d6a873b4cee9da933961d09b089_Out_0:
-        m_Texture: {fileID: 2800000, guid: fb55d50fcf65c99438c618bc9656d9d0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 23a17fd2f5bbdac4aa46271d1a5e00e2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_b17b8b2acdd84a1c8fa5bcb7bea21f4b_Out_0:
+        m_Texture: {fileID: 2800000, guid: 9af9e2415328e4c47b96ec0d3a7dbe6f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -98,6 +115,7 @@ Material:
     - _AlphaFactor: 1
     - _Blend: 0
     - _BumpScale: 1
+    - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _ColorMixer: 0
@@ -105,7 +123,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _EmissionMultiplier: 0
     - _EnvironmentReflections: 1
     - _FresnelPower: 20
@@ -122,11 +140,13 @@ Material:
     - _Smoothness: 0.325
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _Surface: 0
     - _UVSec: 0
     - _WorkflowMode: 1
-    - _ZWrite: 1
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0, g: 0, b: 0, a: 1}

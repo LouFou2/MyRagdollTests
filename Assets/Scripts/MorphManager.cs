@@ -16,28 +16,38 @@ public class MorphManager : MonoBehaviour
     public MeshRenderer floorRenderer;
 
     // Materials Shader Properties ==//
-    public Material characterMaterial;
-    public Material floorMaterial;
-    public Color characterColor;
-    public float colorMixer;
-    public Color floorColor;
-    public float characterFresnelPower;
-    public float characterColorAlpha;
-    public float emissionAmount;
+    public Material opaqueCharacterMaterial;
+    public Material transparentCharacterMaterial;
+    public Material opaqueFloorMaterial;
+    public Material transparentFloorMaterial;
+    [HideInInspector] public Material characterMaterial;
+    [HideInInspector] public Material floorMaterial;
+    //[HideInInspector] public Color characterColor; //***CAN PROBABLY CUT THIS
+    [HideInInspector] public float colorMixer;
+    //[HideInInspector] public Color floorColor; //***ALSO THIS
+    [HideInInspector] public float characterFresnelPower; // Character Material Shader Properties
+    [HideInInspector] public float characterColorAlpha;
+    [HideInInspector] public float charEmissionAmount;
+    [HideInInspector] public float floorAlpha; // Floor Material Shader Properties
+    [HideInInspector] public float floorEmission;
+    [HideInInspector] public float floorColorAmount;
 
     private void Awake()
     {
         morphRenderer = morphMeshObject.GetComponent<SkinnedMeshRenderer>();
         characterMaterial = morphRenderer.sharedMaterial;
-        characterColor = characterMaterial.GetColor("_Color"); // getting properties from shader
+        //characterColor = characterMaterial.GetColor("_Color"); // getting properties from shader
         characterFresnelPower = characterMaterial.GetFloat("_FresnelPower");
         colorMixer = characterMaterial.GetFloat("_ColorMixer");
         characterColorAlpha = characterMaterial.GetFloat("_AlphaFactor");
-        emissionAmount = characterMaterial.GetFloat("_EmissionMultiplier");
+        charEmissionAmount = characterMaterial.GetFloat("_EmissionMultiplier");
 
         floorRenderer = floorMeshObject.GetComponent<MeshRenderer>();
         floorMaterial = floorRenderer.sharedMaterial;
-        floorColor = floorMaterial.GetColor("_Color"); // getting properties from shader
+        //floorColor = floorMaterial.GetColor("_Color"); // getting properties from shader
+        floorAlpha = floorMaterial.GetFloat("_FloorAlpha");
+        floorEmission = floorMaterial.GetFloat("_FloorEmission");
+        floorColorAmount = floorMaterial.GetFloat("_FloorColor");
     }
     void Start()
     {
@@ -55,7 +65,21 @@ public class MorphManager : MonoBehaviour
     void Update()
     {
         float morphAmountNormalized = Mathf.InverseLerp(0, 5, _morphParam); // morphParam range is 0-5
-        if(_morphParam <= 0.01)
+
+        //== Switch Character Material from opaque to transparent ==//
+        if (morphAmountNormalized < 0.1)
+            morphRenderer.sharedMaterial = opaqueCharacterMaterial;
+        if (morphAmountNormalized >= 0.1)
+            morphRenderer.sharedMaterial = transparentCharacterMaterial;
+
+        //== Switch Floor MAterial from opaque to transparent ==//
+        if (morphAmountNormalized < 0.1)
+            floorRenderer.sharedMaterial = opaqueFloorMaterial;
+        if (morphAmountNormalized >= 0.1)
+            floorRenderer.sharedMaterial = transparentFloorMaterial;
+
+        //== Other Transitions ==//
+        if (_morphParam <= 0.01)
             morphRenderer.sharedMesh = morphMeshes[0];
 
         if (_morphParam > 0.01f && _morphParam < 1f) 
@@ -107,7 +131,8 @@ public class MorphManager : MonoBehaviour
         bitCrushManager.bitCrushAmount = morphAmountNormalized * 2; // *2 because bitCrushAmount Range is 0-2
 
         //== Character Material (Shader Properties) ==//
-        characterMaterial.SetColor("_Color", characterColor);
+        characterMaterial = morphRenderer.sharedMaterial;
+        //characterMaterial.SetColor("_Color", characterColor);
         colorMixer = Mathf.Clamp01( morphAmountNormalized * 4); // times 4 so it transitions within first quarter of transition (can adjust)
         characterMaterial.SetFloat("_ColorMixer", colorMixer);
         float fresnelAmount = Mathf.Clamp((morphAmountNormalized * 40), 0, 20); // 40 = 20 * 2 (can adjust 2 for the multiplier, to increase speed of transition)
@@ -119,6 +144,12 @@ public class MorphManager : MonoBehaviour
         characterMaterial.SetFloat("_EmissionMultiplier", emissionAmount);
 
         //== Floor Material (Shader Properties) ==//
-        floorMaterial.SetColor("_Color", floorColor);
+        floorMaterial = floorRenderer.sharedMaterial;
+        floorColorAmount = Mathf.Clamp01(morphAmountNormalized);
+        floorAlpha = Mathf.Clamp01(1 - morphAmountNormalized);
+        floorEmission = Mathf.Clamp01(morphAmountNormalized);
+        floorMaterial.SetFloat("_FloorColor", floorColorAmount);
+        floorMaterial.SetFloat("_FloorAlpha", floorAlpha);
+        floorMaterial.SetFloat("_FloorEmission", floorEmission);
     }
 }
