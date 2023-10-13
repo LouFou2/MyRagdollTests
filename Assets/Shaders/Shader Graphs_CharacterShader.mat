@@ -62,10 +62,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaFactor: 0.8016304
-    - _ColorMixer: 0.39673918
-    - _EmissionMultiplier: 0.495924
-    - _FresnelPower: 16.032608
+    - _AlphaFactor: 1
+    - _ColorMixer: 0
+    - _EmissionMultiplier: 0
+    - _FresnelPower: 20
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:

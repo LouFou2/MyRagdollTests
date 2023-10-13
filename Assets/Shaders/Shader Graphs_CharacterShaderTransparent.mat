@@ -64,7 +64,7 @@ Material:
     m_Floats:
     - _AlphaFactor: 0
     - _ColorMixer: 1
-    - _EmissionMultiplier: 3.846055
+    - _EmissionMultiplier: 4.3003683
     - _FresnelPower: 0
     - _QueueControl: 0
     - _QueueOffset: 0

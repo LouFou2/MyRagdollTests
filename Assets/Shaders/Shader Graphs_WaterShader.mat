@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_FloorShaderTransparent
-  m_Shader: {fileID: -6465566751694194690, guid: 6413805f0a487bc449dc6360be6a6196, type: 3}
+  m_Name: Shader Graphs_WaterShader
+  m_Shader: {fileID: -6465566751694194690, guid: 5d7c34b7350ba3f40ac19ed44e43188a, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
@@ -20,10 +20,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_8b17570dd0864dce8d14837005021040_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 821060aae8f632f44ae0eb232440121a, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -38,17 +34,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FloorAlpha: 0.13992631
-    - _FloorColor: 0.8600737
-    - _FloorEmission: 0.8600737
-    - _FoorColor: 0
-    - _NoiseAmount: 0.3
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors:
-    - _Color: {r: 0, g: 0, b: 0, a: 0}
+    m_Colors: []
   m_BuildTextureStacks: []
---- !u!114 &6033360306006936287
+--- !u!114 &9146376422763490747
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

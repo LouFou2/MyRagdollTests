@@ -8,6 +8,8 @@ public class MyPlayerController : MonoBehaviour
     private InputActionReference movementControl;
     [SerializeField]
     private InputActionReference jumpControl;
+    [SerializeField]
+    private Animator animator; //set animator responsible for player movement transitions
 
     private CharacterController controller;
     private Vector3 playerVelocity;
@@ -51,6 +53,12 @@ public class MyPlayerController : MonoBehaviour
         
         Vector2 movement = movementControl.action.ReadValue<Vector2>();
         //Debug.Log("Movement Input: " + movement);
+        if ( movement.magnitude >= 0.01f ) 
+        {
+            animator.SetFloat("PlayerMovement", Mathf.Clamp01(movement.magnitude));
+        }
+        else if ( movement.magnitude < 0.01f)
+            animator.SetFloat("PlayerMovement", 0f);
 
         Vector3 move = new Vector3(movement.x, 0, movement.y);
         

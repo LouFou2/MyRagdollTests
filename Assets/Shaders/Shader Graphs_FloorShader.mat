@@ -38,8 +38,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FloorAlpha: 0.9008152
-    - _FloorEmission: 0.099184796
+    - _FloorAlpha: 1
+    - _FloorEmission: 0
     - _FoorColor: 0
     - _QueueControl: 0
     - _QueueOffset: 0
