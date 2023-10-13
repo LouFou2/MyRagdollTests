@@ -10,10 +10,12 @@ public class MorphManager : MonoBehaviour
     public BitcrushManager bitCrushManager; // assign the BitCrush Manager in inspector
     public GameObject morphMeshObject; // assign the mesh object in inspector
     public GameObject floorMeshObject; // assign the floor mesh object in inspector
+    [SerializeField] private GameObject _morphPointObject;
+    [SerializeField] private GameObject _playerObject;
     [SerializeField] [Range(0f,5f)] private float _morphParam = 0f;
-    public Mesh[] morphMeshes;
-    public SkinnedMeshRenderer morphRenderer;
-    public MeshRenderer floorRenderer;
+    [HideInInspector] public Mesh[] morphMeshes;
+    [HideInInspector] public SkinnedMeshRenderer morphRenderer;
+    [HideInInspector] public MeshRenderer floorRenderer;
 
     // Materials Shader Properties ==//
     public Material opaqueCharacterMaterial;
@@ -22,9 +24,7 @@ public class MorphManager : MonoBehaviour
     public Material transparentFloorMaterial;
     [HideInInspector] public Material characterMaterial;
     [HideInInspector] public Material floorMaterial;
-    //[HideInInspector] public Color characterColor; //***CAN PROBABLY CUT THIS
-    [HideInInspector] public float colorMixer;
-    //[HideInInspector] public Color floorColor; //***ALSO THIS
+    [HideInInspector] public float characterColorMixer;
     [HideInInspector] public float characterFresnelPower; // Character Material Shader Properties
     [HideInInspector] public float characterColorAlpha;
     [HideInInspector] public float charEmissionAmount;
@@ -36,15 +36,13 @@ public class MorphManager : MonoBehaviour
     {
         morphRenderer = morphMeshObject.GetComponent<SkinnedMeshRenderer>();
         characterMaterial = morphRenderer.sharedMaterial;
-        //characterColor = characterMaterial.GetColor("_Color"); // getting properties from shader
         characterFresnelPower = characterMaterial.GetFloat("_FresnelPower");
-        colorMixer = characterMaterial.GetFloat("_ColorMixer");
+        characterColorMixer = characterMaterial.GetFloat("_ColorMixer");
         characterColorAlpha = characterMaterial.GetFloat("_AlphaFactor");
         charEmissionAmount = characterMaterial.GetFloat("_EmissionMultiplier");
 
         floorRenderer = floorMeshObject.GetComponent<MeshRenderer>();
         floorMaterial = floorRenderer.sharedMaterial;
-        //floorColor = floorMaterial.GetColor("_Color"); // getting properties from shader
         floorAlpha = floorMaterial.GetFloat("_FloorAlpha");
         floorEmission = floorMaterial.GetFloat("_FloorEmission");
         floorColorAmount = floorMaterial.GetFloat("_FloorColor");
@@ -64,7 +62,18 @@ public class MorphManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float morphAmountNormalized = Mathf.InverseLerp(0, 5, _morphParam); // morphParam range is 0-5
+        //== Calculate distance between player and "morph point" (proximity will affect morph transition) ==//
+        Vector3 morphpoint = _morphPointObject.transform.position;
+        Vector3 playerPosition = _playerObject.transform.position;
+        Vector3 playerDistanceFromMorphPoint = morphpoint - playerPosition;
+        Vector2 distance2D = new Vector2(playerDistanceFromMorphPoint.x, playerDistanceFromMorphPoint.z);
+        float distanceFromMorphPoint = distance2D.magnitude;
+        float morphProximityNormalised = Mathf.InverseLerp(10,0, distanceFromMorphPoint); //can adjust 10 for range of the proximity
+        //Debug.Log(morphProximityNormalised);
+        float morphAmountNormalized = morphProximityNormalised;
+        _morphParam = morphAmountNormalized * 5; // because the range of _morphParam is 0-5
+
+        //float morphAmountNormalized = Mathf.InverseLerp(0, 5, _morphParam); // morphParam range is 0-5
 
         //== Switch Character Material from opaque to transparent ==//
         if (morphAmountNormalized < 0.1)
@@ -97,7 +106,6 @@ public class MorphManager : MonoBehaviour
             // lerp the "Decimate" BlendShape value between 0-1, using _morphParam (1-2)
             float decimateValue2 = Mathf.InverseLerp(1, 2, _morphParam);
             decimateValue2 *= 100f;
-            Debug.Log(decimateValue2);
             morphRenderer.SetBlendShapeWeight(0, 100 - decimateValue2);
         }
         if (_morphParam >= 2f && _morphParam < 3f)
@@ -106,7 +114,6 @@ public class MorphManager : MonoBehaviour
             // lerp the "Decimate" BlendShape value between 0-1, using _morphParam (2-3)
             float decimateValue3 = Mathf.InverseLerp(2, 3, _morphParam);
             decimateValue3 *= 100f;
-            Debug.Log(decimateValue3);
             morphRenderer.SetBlendShapeWeight(0, 100 - decimateValue3);
         }
         if (_morphParam >= 3f && _morphParam < 4f)
@@ -115,7 +122,6 @@ public class MorphManager : MonoBehaviour
             // lerp the "Decimate" BlendShape value between 0-1, using _morphParam (3-4)
             float decimateValue4 = Mathf.InverseLerp(3, 4, _morphParam);
             decimateValue4 *= 100f;
-            Debug.Log(decimateValue4);
             morphRenderer.SetBlendShapeWeight(0, 100 - decimateValue4);
         }
         float controlAnimatorParam = Mathf.InverseLerp(0, 5, _morphParam); // calculation to pass param to Controller Animator
@@ -133,8 +139,8 @@ public class MorphManager : MonoBehaviour
         //== Character Material (Shader Properties) ==//
         characterMaterial = morphRenderer.sharedMaterial;
         //characterMaterial.SetColor("_Color", characterColor);
-        colorMixer = Mathf.Clamp01( morphAmountNormalized * 4); // times 4 so it transitions within first quarter of transition (can adjust)
-        characterMaterial.SetFloat("_ColorMixer", colorMixer);
+        characterColorMixer = Mathf.Clamp01( morphAmountNormalized * 4); // times 4 so it transitions within first quarter of transition (can adjust)
+        characterMaterial.SetFloat("_ColorMixer", characterColorMixer);
         float fresnelAmount = Mathf.Clamp((morphAmountNormalized * 40), 0, 20); // 40 = 20 * 2 (can adjust 2 for the multiplier, to increase speed of transition)
         characterFresnelPower = 20 - fresnelAmount; // 20 is the max amount currently set in shader for the float property
         characterMaterial.SetFloat("_FresnelPower", characterFresnelPower);

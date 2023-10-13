@@ -1615,6 +1615,8 @@ MonoBehaviour:
   bitCrushManager: {fileID: 1918476309}
   morphMeshObject: {fileID: 659045571}
   floorMeshObject: {fileID: 1740914832}
+  _morphPointObject: {fileID: 1346293949}
+  _playerObject: {fileID: 305509504}
   _morphParam: 0
   morphMeshes:
   - {fileID: 1913499744560962335, guid: 36f5a1f35c67b054eb93f3829ad31f65, type: 3}
@@ -1630,7 +1632,7 @@ MonoBehaviour:
   transparentFloorMaterial: {fileID: 2100000, guid: 665fd311b39f1344aa3b1c6feec1f030, type: 2}
   characterMaterial: {fileID: 0}
   floorMaterial: {fileID: 0}
-  colorMixer: 0
+  characterColorMixer: 0
   characterFresnelPower: 0
   characterColorAlpha: 0
   charEmissionAmount: 0
@@ -2160,7 +2162,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811844255}
-  m_LocalRotation: {x: 0.004926499, y: -0.00000001720423, z: 8.475765e-11, w: 0.9999879}
+  m_LocalRotation: {x: 0.004926502, y: -0.000000017170446, z: 8.4591265e-11, w: 0.9999879}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4935,6 +4937,37 @@ MonoBehaviour:
       x: 1
       y: 1
       z: 1
+--- !u!1 &1346293949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1346293950}
+  m_Layer: 0
+  m_Name: Morphpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1346293950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346293949}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1368820428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8718626480274720745, guid: a6db67c90c2ed78429aae567949ad303, type: 3}
@@ -5823,8 +5856,8 @@ Transform:
   m_GameObject: {fileID: 1740914832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.01, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
