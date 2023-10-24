@@ -88,7 +88,7 @@ BlendTree:
     m_DirectBlendParameter: RagdollWake
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: af38d6cf18157594180b3c48a0f7b7cd, type: 2}
+    m_Motion: {fileID: 7400000, guid: 4f2ecace6c12f504c829b9e886dd5258, type: 2}
     m_Threshold: 4.5
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -96,7 +96,7 @@ BlendTree:
     m_DirectBlendParameter: RagdollWake
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: af38d6cf18157594180b3c48a0f7b7cd, type: 2}
+    m_Motion: {fileID: 7400000, guid: 4f2ecace6c12f504c829b9e886dd5258, type: 2}
     m_Threshold: 5
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
