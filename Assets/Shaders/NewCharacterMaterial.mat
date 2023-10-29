@@ -64,8 +64,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _ColorLerpFloat: 0
-    - _EmissionMultiplier: 2
-    - _FresnelPower: 8.8
+    - _EmissionMultiplier: 0.64
+    - _FresnelPower: 3.1
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors: []
