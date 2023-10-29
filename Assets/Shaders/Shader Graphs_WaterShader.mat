@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _SampleTexture2D_e6d54b1120574484a689866811cec859_Texture_1:
-        m_Texture: {fileID: 8400000, guid: 3d8f14fe950789f46ba2e34da1162043, type: 2}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -38,19 +38,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DistortStrength: 0.0001
+    - _DistortStrength: 0.073
     - _EmissionFactor: 0.585
     - _Metallic: 0
-    - _NoiseScale: 293
-    - _NormalStrength: 0.026
+    - _NoiseScale: 77
+    - _NormalStrength: 0.0001
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _ReflectionFactor: 5
+    - _ReflectionLOD: 0
     - _ReflectionMultiplier: 0
-    - _Smoothness: 0.718
-    - _WaterMoveSpeed: 0.0014
+    - _SceneColorY_Offset: 0
+    - _Smoothness: 1
+    - _WaterMoveSpeed: 0.03
     - _WaterMoveSpeed2: 0.0001
     m_Colors:
-    - _WaterColor: {r: 0, g: 0, b: 0, a: 1}
+    - _WaterColor: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &9146376422763490747
 MonoBehaviour:
