@@ -42,7 +42,7 @@ Material:
     - _NormalStrength: 0.03
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ReflectionFactor: 0.313
+    - _ReflectionFactor: 0.271
     - _SmoothStepEdge1: 0
     - _SmoothStepEdge2: 2
     - _Smoothness: 1

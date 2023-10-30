@@ -22,12 +22,16 @@ public class AutoStepper : MonoBehaviour
     [SerializeField][Range(0f, 1f)] private float _core_X_MoveFactor = 0.5f;
     [SerializeField][Range(0f, 1f)] private float _core_Z_MoveFactor = 0.5f;
     [SerializeField][Range(0f, 1f)] private float _core_Y_MoveFactor = 0.5f;
-    [SerializeField][Range(0f, 1f)] private float _core_X_RotateFactor = 0.5f;
-    [SerializeField][Range(0f, 1f)] private float _core_Z_RotateFactor = 0.5f;
-    [SerializeField][Range(0f, 1f)] private float _core_Y_RotateFactor = 0.5f;
 
-    [SerializeField] private GameObject _shoulderRotator;
-    [SerializeField][Range(0f, 1f)] private float _shoulder_Y_RotateFactor = 0.5f;
+    [SerializeField] private GameObject _hipAimObject;
+    [SerializeField][Range(0f, 1f)] private float _hipAim_X_MoveFactor = 0.5f;
+    [SerializeField][Range(0f, 1f)] private float _hipAim_Z_MoveFactor = 0.5f;
+    [SerializeField][Range(0f, 1f)] private float _hipAim_Y_MoveFactor = 0.5f;
+
+    [SerializeField] private GameObject _shoulderAimObject;
+    [SerializeField][Range(0f, 1f)] private float _shoulderAim_X_MoveFactor = 0.5f;
+    [SerializeField][Range(0f, 1f)] private float _shoulderAim_Y_MoveFactor = 0.5f;
+    [SerializeField] private float _shoulderAim_Y_Offset = 0.5f;
 
     [SerializeField] private GameObject _headMover;
     [SerializeField][Range(0f, 1f)] private float _head_X_MoveFactor = 0.5f;
@@ -52,11 +56,13 @@ public class AutoStepper : MonoBehaviour
     [SerializeField][Range(0f, 1f)] private float _handL_X_MoveFactor = 0.5f;
     [SerializeField][Range(0f, 1f)] private float _handL_Z_MoveFactor = 0.5f;
     [SerializeField][Range(0f, 1f)] private float _handL_Y_MoveFactor = 0.5f;
+    [SerializeField] private float _handL_X_Offset = 0f;
 
     [SerializeField] private GameObject _handR_Mover;
     [SerializeField][Range(0f, 1f)] private float _handR_X_MoveFactor = 0.5f;
     [SerializeField][Range(0f, 1f)] private float _handR_Z_MoveFactor = 0.5f;
     [SerializeField][Range(0f, 1f)] private float _handR_Y_MoveFactor = 0.5f;
+    [SerializeField] private float _handR_X_Offset = 0f;
 
     [SerializeField] private GameObject _legL_Mover;
     [SerializeField][Range(0f, 1f)] private float _legL_X_MoveFactor = 0.5f;
@@ -74,11 +80,16 @@ public class AutoStepper : MonoBehaviour
     [SerializeField][Range(0f, 1f)] private float _toeL_X_MoveFactor = 0.5f;
     [SerializeField][Range(0f, 1f)] private float _toeL_Z_MoveFactor = 0.5f;
     [SerializeField][Range(0f, 1f)] private float _toeL_Y_MoveFactor = 0.5f;
+    [SerializeField] private float _toeL_X_Offset = 0f;
+    [SerializeField] private float _toeL_Z_Offset = 0f;
 
     [SerializeField] private GameObject _toeR_Mover;
     [SerializeField][Range(0f, 1f)] private float _toeR_X_MoveFactor = 0.5f;
     [SerializeField][Range(0f, 1f)] private float _toeR_Z_MoveFactor = 0.5f;
     [SerializeField][Range(0f, 1f)] private float _toeR_Y_MoveFactor = 0.5f;
+    [SerializeField] private float _toeR_X_Offset = 0f;
+    [SerializeField] private float _toeR_Z_Offset = 0f;
+
 
     void Update()
     {
@@ -139,8 +150,8 @@ public class AutoStepper : MonoBehaviour
 
         //== Calling Methods to Move and Rotate Target Objects ==//
         MoveCore(_coreMover, added_X_SineMovement, added_Z_SineMovement, addedDouble_Y_CosineMovement, _core_X_MoveFactor, _core_Z_MoveFactor, _core_Y_MoveFactor);
-        RotateCore(_coreMover, fullDegreesRotation, _core_X_RotateFactor, _core_Y_RotateFactor, _core_Z_RotateFactor);
-        RotateShoulders(_shoulderRotator, fullDegreesRotation, _shoulder_Y_RotateFactor);
+        RotateCore(_hipAimObject, added_X_SineMovement, added_Z_SineMovement, addedDouble_Y_CosineMovement, _hipAim_X_MoveFactor, _hipAim_Z_MoveFactor, _hipAim_Y_MoveFactor);
+        RotateShoulders(_shoulderAimObject, added_X_SineMovement, addedDouble_Y_CosineMovement, _shoulderAim_X_MoveFactor, _shoulderAim_Y_MoveFactor);
         MoveHead(_headMover, added_X_SineMovement, added_Z_SineMovement, addedDouble_Y_CosineMovement, _head_X_MoveFactor, _head_Z_MoveFactor, _head_Y_MoveFactor);
         MoveArmL(_armL_Mover, addedDouble_X_CosineMovement, added_Z_SineMovement, addedDouble_Y_CosineMovement, _armL_X_MoveFactor, _armL_Z_MoveFactor, _armL_Y_MoveFactor);
         MoveArmR(_armR_Mover, addedDouble_X_CosineMovement, added_Z_SineMovement, addedDouble_Y_CosineMovement, _armR_X_MoveFactor, _armR_Z_MoveFactor, _armR_Y_MoveFactor);
@@ -151,34 +162,20 @@ public class AutoStepper : MonoBehaviour
         MoveToeL(_toeL_Mover, addedDouble_X_CosineMovement, added_Z_SineMovement, added_Y_CosineMovement, _toeL_X_MoveFactor, _toeL_Z_MoveFactor, _toeL_Y_MoveFactor);
         MoveToeR(_toeR_Mover, addedDouble_X_CosineMovement, added_Z_SineMovement, added_Y_CosineMovement, _toeR_X_MoveFactor, _toeR_Z_MoveFactor, _toeR_Y_MoveFactor);
     }
-    void MoveCore(GameObject moverObject, Vector3 xMovement, Vector3 zMovement, Vector3 verticalMovement, float moveAmountX, float moveAmount_Z, float moveAmount_Y)
+    void MoveCore(GameObject moverObject, Vector3 xMovement, Vector3 zMovement, Vector3 yMovement, float moveAmountX, float moveAmount_Z, float moveAmount_Y)
     {
         Vector3 position = moverObject.transform.localPosition;
-        moverObject.transform.localPosition = new Vector3(-(xMovement.x * moveAmountX), verticalMovement.y * moveAmount_Y, zMovement.z * moveAmount_Z);
+        moverObject.transform.localPosition = new Vector3(-(xMovement.x * moveAmountX), yMovement.y * moveAmount_Y, zMovement.z * moveAmount_Z);
     }
-    void RotateCore(GameObject rotateObject, float degreesRotation, float xRotationFactor, float yRotationFactor, float zRotationFactor) 
+    void RotateCore(GameObject moverObject, Vector3 xMovement, Vector3 zMovement, Vector3 yMovement, float moveAmountX, float moveAmount_Z, float moveAmount_Y) 
     {
-        float degreesNormValue = Mathf.InverseLerp(0, 360, degreesRotation);
-        degreesNormValue *= 2;
-        if (degreesNormValue > 1)
-            degreesNormValue = 2 - degreesNormValue;
-        float xRotateMin = -90f;
-        float xRotateMax = 90f;
-        float actualDegreesX = Mathf.Lerp(xRotateMin, xRotateMax, degreesNormValue);
-        float yRotateMin = -90f;
-        float yRotateMax = 90f;
-        float actualDegreesY = Mathf.Lerp(yRotateMin, yRotateMax, degreesNormValue);
-        float zRotateMin = -90f;
-        float zRotateMax = 90f;
-        float actualDegreesZ = Mathf.Lerp(zRotateMin, zRotateMax, degreesNormValue);
-        Quaternion rotation = Quaternion.Euler(actualDegreesX * xRotationFactor, actualDegreesY * yRotationFactor, actualDegreesZ * zRotationFactor);
-        rotateObject.transform.localRotation = rotation;
+        Vector3 position = moverObject.transform.localPosition;
+        moverObject.transform.localPosition = new Vector3((xMovement.x * moveAmountX), yMovement.y * moveAmount_Y, zMovement.z * moveAmount_Z);
     }
-    void RotateShoulders(GameObject rotateObject, float degreesRotation, float rotationFactor)
+    void RotateShoulders(GameObject moverObject, Vector3 xMovement, Vector3 yMovement, float moveAmountX, float moveAmount_Y)
     {
-        
-        Quaternion rotation = Quaternion.Euler(0f, degreesRotation * rotationFactor, 0f);
-        rotateObject.transform.localRotation = rotation;
+        Vector3 position = moverObject.transform.localPosition;
+        moverObject.transform.localPosition = new Vector3(-(xMovement.x * moveAmountX), (yMovement.y * moveAmount_Y) + _shoulderAim_Y_Offset, position.z);
     }
     
     void MoveHead(GameObject moverObject, Vector3 xMovement, Vector3 zMovement, Vector3 verticalMovement, float moveAmountX, float moveAmount_Z, float moveAmount_Y)
@@ -202,12 +199,12 @@ public class AutoStepper : MonoBehaviour
     void MoveHandL(GameObject moverObject, Vector3 xMovement, Vector3 zMovement, Vector3 verticalMovement, float moveAmountX, float moveAmount_Z, float moveAmount_Y)
     {
         Vector3 position = moverObject.transform.localPosition;
-        moverObject.transform.localPosition = new Vector3(-(xMovement.x * moveAmountX), -(verticalMovement.y * moveAmount_Y), -(zMovement.z * moveAmount_Z));
+        moverObject.transform.localPosition = new Vector3(-(xMovement.x * moveAmountX) + _handL_X_Offset, -(verticalMovement.y * moveAmount_Y), -(zMovement.z * moveAmount_Z));
     }
     void MoveHandR(GameObject moverObject, Vector3 xMovement, Vector3 zMovement, Vector3 verticalMovement, float moveAmountX, float moveAmount_Z, float moveAmount_Y)
     {
         Vector3 position = moverObject.transform.localPosition;
-        moverObject.transform.localPosition = new Vector3((xMovement.x * moveAmountX), -(verticalMovement.y * moveAmount_Y), zMovement.z * moveAmount_Z);
+        moverObject.transform.localPosition = new Vector3((xMovement.x * moveAmountX) + _handR_X_Offset, -(verticalMovement.y * moveAmount_Y), zMovement.z * moveAmount_Z);
     }
     void MoveLegL(GameObject moverObject, Vector3 xMovement, Vector3 zMovement, Vector3 verticalMovement, float moveAmountX, float moveAmount_Z, float moveAmount_Y)
     {
@@ -245,8 +242,9 @@ public class AutoStepper : MonoBehaviour
         Vector3 position = moverObject.transform.localPosition;
         float actualX = position.x;
         if (!legFrozenX_L)
-            actualX = -(xMovement.x * moveAmountX);
-        moverObject.transform.localPosition = new Vector3(actualX, verticalMovement.y * moveAmount_Y, zMovement.z * moveAmount_Z);
+            actualX = -(xMovement.x * moveAmountX) + _toeL_X_Offset;
+        float actualZ = (zMovement.z * moveAmount_Z) + _toeL_Z_Offset;
+        moverObject.transform.localPosition = new Vector3(actualX, verticalMovement.y * moveAmount_Y, actualZ);
         if (moverObject.transform.localPosition.y <= 0f)
             moverObject.transform.localPosition = new Vector3(moverObject.transform.localPosition.x, 0f, moverObject.transform.localPosition.z);
     }
@@ -255,8 +253,9 @@ public class AutoStepper : MonoBehaviour
         Vector3 position = moverObject.transform.localPosition;
         float actualX = position.x;
         if (!legFrozenX_R)
-            actualX = xMovement.x * moveAmountX;
-        moverObject.transform.localPosition = new Vector3(actualX, -(verticalMovement.y * moveAmount_Y), -(zMovement.z * moveAmount_Z));
+            actualX = (xMovement.x * moveAmountX) + _toeR_X_Offset;
+        float actualZ = -(zMovement.z * moveAmount_Z) + _toeR_Z_Offset;
+        moverObject.transform.localPosition = new Vector3(actualX, -(verticalMovement.y * moveAmount_Y), actualZ);
         if (moverObject.transform.localPosition.y <= 0f)
             moverObject.transform.localPosition = new Vector3(moverObject.transform.localPosition.x, 0f, moverObject.transform.localPosition.z);
     }
