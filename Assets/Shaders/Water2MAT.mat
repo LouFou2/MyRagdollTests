@@ -38,10 +38,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _NormalStrength: 0.02
+    - _AlphaFactor: 1
+    - _NormalStrength: 0.03
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ReflectionFactor: 0.472
+    - _ReflectionFactor: 0.313
+    - _SmoothStepEdge1: 0
+    - _SmoothStepEdge2: 2
     - _Smoothness: 1
     - _WaterLerp: 0.441
     - _WaterSpeed1: 0.129

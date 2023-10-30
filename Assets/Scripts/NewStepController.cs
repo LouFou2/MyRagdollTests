@@ -29,14 +29,11 @@ public class NewStepController : MonoBehaviour
         currentPosition = transform.position;
         Vector2 horizontalLastPosition = new Vector2(lastPosition.z, lastPosition.x);           // only using x z movement for calculating horizontal movement
         Vector2 horizontalCurrentPosition = new Vector2(currentPosition.z, currentPosition.x);  // important: z is forward (same as x axis for 2d), so z is first
+        
         // Calculate HorizontalMoveDistance using magnitude
         float horizontalDistanceMovedInUpdate = (horizontalCurrentPosition - horizontalLastPosition).magnitude; ;
         HorizontalMoveDistance += horizontalDistanceMovedInUpdate;
         Debug.Log(HorizontalMoveDistance);
-
-        //***HAVE TO FIND A GOOD WAY TO RESET THE HorizontalMoveDistance WHEN WAVE CYCLES ARE COMPLETED
-        /*if (HorizontalMoveDistance >= horizontalMoverAmplitude * 4) // * 4 to allow for full wave cycle (up-down,down-up)
-        { HorizontalMoveDistance = 0; }*/
 
         //-- Sine Waves: to be referenced by other objects for movement --//
         float movementSineValue = Mathf.Sin(HorizontalMoveDistance);    // Sine value starts at the middle of the amplitude range.

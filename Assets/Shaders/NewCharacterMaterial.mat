@@ -63,9 +63,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ColorLerpFloat: 0
-    - _EmissionMultiplier: 0.64
-    - _FresnelPower: 3.1
+    - _ColorLerpFloat: 0.03
+    - _EmissionMultiplier: 0.3
+    - _FresnelPower: 4.3
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors: []
